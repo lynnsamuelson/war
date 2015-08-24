@@ -10,8 +10,8 @@ define(function(require) {
 
    $.ajax ({url:"http://deckofcardsapi.com/api/deck/" + deck.deck_id + "/draw/?count=1"})
    .done(function(card) {
-      deferred.resolve(data);
-      console.log("card", card);
+      deferred.resolve(card);
+      //console.log("card", card);
    }).fail(function(xhr, status, error) {
       deferred.reject(error);
       console.log("The error is ", error);
