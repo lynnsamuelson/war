@@ -16,28 +16,39 @@ requirejs.config({
   }
 });
 
-requirejs(["dependencies", "firebase", "get-deck", "draw-card", "game-play"], 
-  function(dependencies, firebase, getDeck, drawCard, gamePlay) {
-    var deckOne = getDeck();
-    deckOne.then(function(deck) {
-      drawCard(deck).then(function(card) {
-        console.log("Deck One", card);
-        
-      });
-      //console.log("from main", deck.deck_id);
-      //console.log("deck", deck);
-      gamePlay();
-    });
+requirejs(["dependencies", "firebase", "get-deck", "draw-card", "draw"], 
+  function(dependencies, firebase, getDeck, drawCard, draw) {
 
-    var deckTwo = getDeck();
-    deckOne.then(function(deck) {
-      drawCard(deck).then(function(card) {
-        console.log("Deck Two", card);
-      });
-      //console.log("from main", deck.deck_id);
-      //console.log("deck", deck);
-      gamePlay();
-    });
+    draw();
+    //gamePlay();
+    // var deckOne = getDeck();
+    // var cardOneValue;
+    // var cardTwoValue;
+    // deckOne.then(function(deck) {
+    //   $('#deckOne').on("click", function() {
+    //     drawCard(deck).then(function(card) {
+    //     //console.log("Deck One", card);
+    //     var cardImage = "<img src=" + card.cards[0].image + "></img>";
+    //     $('#cardOne').html(cardImage);
+    //     console.log("card one", card.cards[0].value);
+    //     cardOneValue = card.cards[0].value;
+        
+    //     });
+    //   });
+    // });
+
+    // var deckTwo = getDeck();
+    // deckTwo.then(function(deck) {
+    //   $('#deckTwo').on("click", function() {
+    //     drawCard(deck).then(function(card) {
+    //     //console.log("Deck two", card);
+    //     var cardImage = "<img src=" + card.cards[0].image + "></img>";
+    //     $('#cardTwo').html(cardImage);
+    //     console.log("card two", card.cards[0].value);
+    //     cardTwoValue = card.cards[0].value;
+    //     });
+    //   });
+    // });
 
 
   });
