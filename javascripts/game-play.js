@@ -48,10 +48,12 @@ define(function(require) {
     }
     console.log("count one", countOne);
     console.log("count two", countTwo);
+    $(".score").html("<h4>Player 1: " + countOne + "  Player 2: " + countTwo + "</h4>");
     
   
     //score
     //winner
+
 
     
   };
