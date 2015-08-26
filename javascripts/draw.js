@@ -14,7 +14,7 @@ define(function(require) {
       //console.log(deck);
       $('#deckOne').on("click", function() {
         drawCard(deck).then(function(card) {
-        //console.log("Deck One", card);
+        console.log("Deck One", card);
         var cardImage = "<img src=" + card.cards[0].image + "></img>";
         $('#cardOne').html(cardImage);
         cardOneValue = card.cards[0].value;
